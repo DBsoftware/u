@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-10">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>imagen</td>
+                    <td>Nombre</td>
+                    <td>contactos</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i of data">
+                    <td>
+                        <img class="img-thumbnail" width="64" [src]="i.img" alt="">
+                    </td>
+                    <td>{{i.nombre}}</td>
+                    <td>
+                        <div class="form-group">
+                            <select class="form-control" name="" id="">
+                            <option *ngFor="let c of i.contactos" >{{c.nombre}}</option>
+                        </select>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="borrar(i.id)">Borrar</button>&nbsp;
+                        <button class="btn btn-primary" (click)="update(i.id)">Actualizar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
